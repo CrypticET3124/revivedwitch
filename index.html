@@ -10,30 +10,73 @@ title: Home
         </style>
     </head>
 
-    <body>
-        <div class="wrapper">
+    <body class="page--top-app-bar">
+        <div id="wrapper">
             <header>
                 {% include nav.html %}
             </header>
 
-            <main>
+            <main id="content-main">
                 <h1>
                     Home
                 </h1>
+                <div id="button">
+                    <ui-button outlined @click="$alert(message)">test</ui-button>
+                </div>
 
-                <p>
-                    Welcome to my website I guess.
-                </p>
-
-                <p>
-                    To see what this is all about, check out the <a href="/about/">about</a> page.
-                </p>
-
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, quis culpa! Aliquam provident esse
+                    recusandae corrupti nulla, accusantium at, non aliquid tenetur doloremque consequatur eum corporis
+                    dolorem nostrum rem quas?
+                    Consectetur aperiam illum culpa reiciendis quas quidem architecto iste eligendi voluptatum repellat
+                    ea, officiis impedit sint. Cumque commodi saepe voluptatum delectus unde, vero accusamus nam
+                    aspernatur mollitia labore corrupti ipsam.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, quis culpa! Aliquam provident esse
+                    recusandae corrupti nulla, accusantium at, non aliquid tenetur doloremque consequatur eum corporis
+                    dolorem nostrum rem quas?
+                    Consectetur aperiam illum culpa reiciendis quas quidem architecto iste eligendi voluptatum repellat
+                    ea, officiis impedit sint. Cumque commodi saepe voluptatum delectus unde, vero accusamus nam
+                    aspernatur mollitia labore corrupti ipsam.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, quis culpa! Aliquam provident esse
+                    recusandae corrupti nulla, accusantium at, non aliquid tenetur doloremque consequatur eum corporis
+                    dolorem nostrum rem quas?
+                    Consectetur aperiam illum culpa reiciendis quas quidem architecto iste eligendi voluptatum repellat
+                    ea, officiis impedit sint. Cumque commodi saepe voluptatum delectus unde, vero accusamus nam
+                    aspernatur mollitia labore corrupti ipsam.</p>
             </main>
         </div>
 
-        <footer>
+        <footer id="footer">
             {% include footer.html %}
+            <script>
+                var button = Vue.createApp({
+                    setup() {
+                        var message = "Hello BalmUI";
+                        return {
+                            message
+                        };
+                    }
+                });
+                button.use(BalmUI);
+                button.use(BalmUIPlus);
+                button.mount("#button");
+            </script>
+            <script>
+                var nav = Vue.createApp({
+                    setup() {
+                        return {
+                            openDrawer: false
+                        };
+                    },
+                    methods: {
+                        openDrawer() {
+                            this.openDrawer = true;
+                        }
+                    }
+                });
+                nav.use(BalmUI);
+                nav.use(BalmUIPlus);
+                nav.mount("#nav");
+            </script>
         </footer>
     </body>
 

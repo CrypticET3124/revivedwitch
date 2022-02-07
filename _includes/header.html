@@ -2,9 +2,15 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }}</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/files/mdl/material.min.css" />
-<script defer src="/files/mdl/material.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/balm-ui/dist/balm-ui.css"/>
+<link rel="stylesheet" href="/css/style.css">
+{% if jekyll.environment == "production" %}
+    <script src="/files/vue/vue.global.prod.js"></script>
+{% else %}
+    <script src="/files/vue/vue.global.js"></script>
+{% endif %}
+<script src="/files/balmui/balm-ui.js"></script>
+<script src="/files/balmui/balm-ui-plus.js"></script>
 <!--Favicons-->
 <link rel="shortcut icon" href="/sitewide/favicons/favicon.ico">
 <link rel="icon" sizes="16x16 32x32 64x64" href="/sitewide/favicons/favicon.ico">
